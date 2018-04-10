@@ -5,7 +5,7 @@
 // Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/RTCPeerConnection
 
 window.moz = !!navigator.mozGetUserMedia;
-var chromeVersion = !!navigator.mediaDevices.getUserMedia ? 0 : parseInt(navigator.userAgent.match( /Chrom(e|ium)\/([0-9]+)\./ )[2]);
+var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAgent.match( /Chrom(e|ium)\/([0-9]+)\./ )[2]);
 
 function RTCPeerConnection(options) {
     var w = window,
