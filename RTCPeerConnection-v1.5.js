@@ -4,8 +4,8 @@
 // MIT License   - www.WebRTC-Experiment.com/licence
 // Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/RTCPeerConnection
 
-window.moz = !!navigator.mozGetUserMedia;
-var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAgent.match( /Chrom(e|ium)\/([0-9]+)\./ )[2]);
+window.moz = !!navigator.mediaDevices.getUserMedia;
+var chromeVersion = !!navigator.mediaDevices.getUserMedia ? 0 : parseInt(navigator.userAgent.match( /Chrom(e|ium)\/([0-9]+)\./ )[2]);
 
 function RTCPeerConnection(options) {
     var w = window,
