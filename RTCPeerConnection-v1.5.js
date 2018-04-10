@@ -281,7 +281,7 @@ var video_constraints = {
 function getUserMedia(options) {
     var n = navigator,
         media;
-    n.getMedia = n.webkitGetUserMedia || n.mozGetUserMedia;
+    n.getMedia = n.webkitGetUserMedia || navigator.mediaDevices.getUserMedia;
     n.getMedia(options.constraints || {
             audio: true,
             video: video_constraints
