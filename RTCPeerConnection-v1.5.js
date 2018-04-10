@@ -281,13 +281,21 @@ var video_constraints = {
 function getUserMedia(options) {
     var n = navigator,
         media;
-    n.getMedia = n.webkitGetUserMedia || navigator.getUserMedia();
+    n.getMedia = n.webkitGetUserMedia || n.mozGetUserMedia;
     n.getMedia(options.constraints || {
             audio: true,
             video: video_constraints
         }, streaming, options.onerror || function(e) {
             console.error(e);
         });
+    n.mediaDevices.getUserMedia({
+  audio: false,
+  video: true
+})
+.then(gotStream)
+.catch(function(e) {
+  
+});
 
     function streaming(stream) {
         var video = options.video;
