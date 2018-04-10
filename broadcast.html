@@ -306,9 +306,9 @@
                 }
 
                 function rotateInCircle(video) {
-                    video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
+                    video.style[navigator.mediaDevices.getUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
                     setTimeout(function() {
-                        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
+                        video.style[navigator.mediaDevices.getUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
                     }, 1000);
                 }
 
